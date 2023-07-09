@@ -1,0 +1,74 @@
+name: 'doxygen and gh-pages'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+env:
+  github_token: ${{ secrets.GITHUB_TOKEN }}
+  branch: gh-pages
+  output_folder: docs/build/html
+  doxygen_url: "https://github.com/doxygen/doxygen/releases/download/Release_1_9_7/doxygen-1.9.7.linux.bin.tar.gz"
+  doxygen_extract: ../doxygen
+  doxygen_bin: doxygen-1.9.7/bin
+  doxyfile: docs/Doxyfile
+
+jobs:
+  make-docs:
+    name: "Make docs"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install doxygen
+      run: |
+        echo -e "\e[32mInstall configuration: \e[0m"
+        echo -e "Download URL: ${doxygen_url}"
+        echo -e "Extract to: ${doxygen_extract}"
+        echo -e "Doxygen: ${doxygen}"
+
+        mkdir -p ${doxygen_extract}
+        wget -q -O - ${doxygen_url} | tar -xz -C ${doxygen_extract}
+
+        echo -e "\e[32mCheck files: \e[0m"
+        find ${doxygen_extract} -maxdepth 5 -name doxygen -type f
+        ${doxygen_extract}/${doxygen_bin}/doxygen --version
+
+        echo -e "\e[32mSet PATH\e[0m"
+        echo "$(realpath ${doxygen_extract}/${doxygen_bin})" >> $GITHUB_PATH
+      
+    - name: Check doxygen installation
+      run: |
+        doxygen --version
+        echo -e "\e[32mSuccessfully install doxygen. \e[0m"
+
+    - name: Install make
+      run: |
+        sudo apt-get install -y make
+
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        submodules: "true"
+
+    - name: Make docs
+      run: |
+        make docs
+        echo -e "\e[32mSuccessfully make docs. \e[0m"
+
+    - name: Create .nojekyll (ensures pages with underscores work on gh pages)
+      run: touch ${output_folder}/.nojekyll
+
+    - name: Check Deploy Settings
+      run: |
+        echo -e "\e[32mDeploy Settings: \e[0m"
+        echo -e "Deploy to branch: ${branch}"
+        echo -e "HTML folder: $(realpath ${output_folder})"
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ env.branch }}
+        folder: ${{ env.output_folder}}
+
