@@ -1,5 +1,7 @@
 # Use Markdown
 
+[TOC]
+
 Yes, Doxygen can processing `.md` files !!
 
 Bellow are some functional tests.
@@ -54,6 +56,15 @@ Student::Student(int name, int address) {
 }
 ```
 
+```python
+import numpy as np
+import scipy.signal
+
+def hello(name):
+   print(f"hello {name}")
+
+```
+
 ## test link
 
 See: [link test](../basic-usage/link-test.md)
@@ -62,9 +73,9 @@ See: [link test](../basic-usage/link-test.md)
 
 ## image test
 
-![test-img](typora/test-image.png)
+![](typora/test-image.png)
 
-支持很差，doxygen 不会自动把图片文件拷贝到输出目录，也不会翻译图片地址，所以生成的网页中不包含图片
+But remember to include the image folder path `use-markdown/typora` in the `IMAGE_PATH`.
 
 
 
@@ -87,4 +98,3 @@ See: [link test](../basic-usage/link-test.md)
     <div>some text here</div>
     <div style="display: block; width: 30px; height: 30px; background-color: yellow;"></div>
 </div>
-<img src="typora/test-image.png" alt="test-img" style="zoom: 50%;" />

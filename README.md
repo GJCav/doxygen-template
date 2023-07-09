@@ -1,5 +1,7 @@
 # README
 
+[TOC]
+
 ## Hello doxygen !
 
 This project is a template project to demonstrate an intuitive and modern way to enjoy doxygen. Doxygen is an time-honored tool for generating references from comments in codes. However, using it without any configuration probably results in unsatisfied outcome. Although the official online-document helps a lot, it is too brief and too simple to prepare doxygen ready for production.
