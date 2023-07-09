@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['math_20_26_20chinese_44',['math &amp; chinese',['../md_use_markdown_math.html',1,'']]]
+  ['math_20_26_20chinese_0',['math &amp; chinese',['../md_use-markdown_2math.html',1,'']]]
 ];

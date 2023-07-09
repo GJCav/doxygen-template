@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['solution_24',['Solution',['../classSolution.html',1,'']]],
-  ['student_25',['Student',['../classStudent.html',1,'']]]
+  ['solution_0',['Solution',['../classSolution.html',1,'']]],
+  ['student_1',['Student',['../classStudent.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['link_20test_43',['link test',['../md_basic_usage_link_test.html',1,'']]]
+  ['link_20test_0',['link test',['../md_basic-usage_2link-test.html',1,'']]]
 ];

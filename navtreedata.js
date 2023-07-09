@@ -25,35 +25,30 @@
 var NAVTREE =
 [
   [ "doxygen-template", "index.html", [
-    [ "README", "index.html", [
-      [ "Hello doxygen !", "index.html#autotoc_md9", null ],
-      [ "Status", "index.html#autotoc_md10", null ],
-      [ "Quick Start", "index.html#autotoc_md11", null ],
-      [ "LICENSE", "index.html#autotoc_md12", null ]
-    ] ],
-    [ "link test", "md_basic_usage_link_test.html", [
-      [ "link to sections", "md_basic_usage_link_test.html#autotoc_md1", null ],
-      [ "link to files", "md_basic_usage_link_test.html#autotoc_md2", [
-        [ "TLDR", "md_basic_usage_link_test.html#autotoc_md3", null ],
-        [ "usage", "md_basic_usage_link_test.html#autotoc_md4", null ],
-        [ "examples", "md_basic_usage_link_test.html#autotoc_md5", null ]
+    [ "README", "index.html", "index" ],
+    [ "link test", "md_basic-usage_2link-test.html", [
+      [ "link to sections", "md_basic-usage_2link-test.html#link-to-sections", null ],
+      [ "link to files", "md_basic-usage_2link-test.html#link-to-files", [
+        [ "TLDR", "md_basic-usage_2link-test.html#tldr", null ],
+        [ "usage", "md_basic-usage_2link-test.html#usage", null ],
+        [ "examples", "md_basic-usage_2link-test.html#examples", null ]
       ] ],
-      [ "link to classes, functions, etc.", "md_basic_usage_link_test.html#autotoc_md6", null ],
-      [ "link from comments", "md_basic_usage_link_test.html#autotoc_md7", null ]
+      [ "link to classes, functions, etc.", "md_basic-usage_2link-test.html#link-to-classes-functions-etc", null ],
+      [ "link from comments", "md_basic-usage_2link-test.html#link-from-comments", null ]
     ] ],
-    [ "Use Markdown", "md_use_markdown_markdown_test.html", [
-      [ "h2", "md_use_markdown_markdown_test.html#autotoc_md14", [
-        [ "h3", "md_use_markdown_markdown_test.html#autotoc_md15", null ]
+    [ "Use Markdown", "md_use-markdown_2markdown-test.html", [
+      [ "h2", "md_use-markdown_2markdown-test.html#h2", [
+        [ "h3", "md_use-markdown_2markdown-test.html#h3", null ]
       ] ],
-      [ "basic", "md_use_markdown_markdown_test.html#autotoc_md16", null ],
-      [ "test link", "md_use_markdown_markdown_test.html#autotoc_md18", null ],
-      [ "image test", "md_use_markdown_markdown_test.html#autotoc_md19", null ],
-      [ "table test", "md_use_markdown_markdown_test.html#autotoc_md20", null ],
-      [ "html test", "md_use_markdown_markdown_test.html#autotoc_md21", null ]
+      [ "basic", "md_use-markdown_2markdown-test.html#basic", null ],
+      [ "test link", "md_use-markdown_2markdown-test.html#test-link", null ],
+      [ "image test", "md_use-markdown_2markdown-test.html#image-test", null ],
+      [ "table test", "md_use-markdown_2markdown-test.html#table-test", null ],
+      [ "html test", "md_use-markdown_2markdown-test.html#html-test", null ]
     ] ],
-    [ "math & chinese", "md_use_markdown_math.html", [
-      [ "chinese", "md_use_markdown_math.html#autotoc_md23", null ],
-      [ "math", "md_use_markdown_math.html#autotoc_md24", null ]
+    [ "math & chinese", "md_use-markdown_2math.html", [
+      [ "chinese", "md_use-markdown_2math.html#chinese", null ],
+      [ "math", "md_use-markdown_2math.html#math", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
