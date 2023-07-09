@@ -71,3 +71,7 @@ link to file under a neighborhood of the parent folder:
 ## link to classes, functions, etc.
 
 See [doxygen-docs](https://www.doxygen.nl/manual/autolink.html#linkother)
+
+## link from comments
+
+See `use-markdown/test-link.h`

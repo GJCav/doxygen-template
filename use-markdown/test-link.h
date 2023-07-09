@@ -8,4 +8,10 @@
  * @copyright Copyright (c) 2023
  * 
  * Nothing, just for testing 
+ * 
+ * link to markdown: 
+ * 
+ * path: basic-usage/link-test.md
+ * 
+ * ref by label "link-test": @ref link-test "link-test"
  */

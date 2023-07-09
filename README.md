@@ -34,6 +34,7 @@ The project is under intensive development. Contents may change rapidly.
 * intra-code comments examples:
     * code files under folder `basic-usage`, such as `basic-usage/main.cpp`.
 
+* chinese & math: [chinese & math](use-markdown/math.md)
 
 ## LICENSE
 

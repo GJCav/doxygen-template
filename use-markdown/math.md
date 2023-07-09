@@ -16,6 +16,8 @@
 
 ## math
 
+要启用 MathJax，需要把 `USE_MATHJAX` 设置为 `YES`。
+
 对公式渲染的支持是使用 MathJax，所以行内公式需要用 MathJax 的提示符，这是一个正确的行内渲染： \\( \sum_i^n=\Pi_n \sin (\frac{a}{b})^a \\) 。
 
 要配置 MathJax，可以用 `MATHJAX_CODEFILE` 指定一个配置文件
