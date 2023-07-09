@@ -75,8 +75,9 @@ See: [link test](../basic-usage/link-test.md)
 
 ![](typora/test-image.png)
 
-But remember to include the image folder path `use-markdown/typora` in the `IMAGE_PATH`.
+But remember to include the image folder path `use-markdown/typora` in the `IMAGE_PATH`, or use provided `Makefile`. `make docs` will find all images (`*.png` and `*.jpg`) recursively and add their folder paths to `IMAGE_PATH`.
 
+See `Makefile` and `docs/find-img-path.sh` to customize the behavior.
 
 
 ## table test

@@ -6,5 +6,4 @@ all:
 FORCE:
 
 docs: FORCE
-	@echo "making documentation"
-	@doxygen docs/Doxyfile
+	@( cat docs/Doxyfile ; bash docs/find-img-path.sh ) | doxygen -
