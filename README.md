@@ -14,6 +14,8 @@ Too make life easier, I make this template project. It is expected to be:
 
 * encourage markdown document: comments from code files are informative, but they are API *reference* rather than *guide*. A fresh user expects to read guides that introduces and shows the outline of the project, teaches the user examples with baby-understandable explanation. So markdown documents besides the comments are encouraged as markdown is easy to edit and read with various editor compared to raw letters in comments.
 
+* out-of-box Github Page deploy
+
 ## Status
 
 The project is under intensive development. Contents may change rapidly.
@@ -27,6 +29,8 @@ The project is under intensive development. Contents may change rapidly.
 * markdown examples: 
     * The welcome page. [README.md](README.md)
     * Markdown syntax testing. [markdown-test](use-markdown/markdown-test.md)
+
+* link examples:
     * Links in markdown. [link-test](basic-usage/link-test.md)
     * Official guide: [automatic link generation](https://www.doxygen.nl/manual/autolink.html)
     * Official references: [command-ref](https://www.doxygen.nl/manual/commands.html#cmdref)
