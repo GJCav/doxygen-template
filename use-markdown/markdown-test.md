@@ -126,12 +126,13 @@ Add `[TOC]` on the line next to the title. Doxygen will generate a TOC sidebar a
 
 ## article title and Doxygen label
 
-The top level title, defined by `# title`, the `Use Mardown` in this article, will be the label in doxygen. A doxygen label can be referred globally among the project. More specifically, the project comprises all files set by `INPUT` in `Doxyfile`.  Thus this article can be referred as `%\ref Use-Markdown` as an addition to markdown style `[Use Markdown](./markdown-test.md)`. 
+The top level title, defined by `# title`, the `Use Mardown` in this article, will be the label in doxygen. A doxygen label can be referred globally among the project. More specifically, the project comprises all files set by `INPUT` in `Doxyfile`.  Thus this article can be referred as `\ref use-markdown` as an addition to markdown style `[Use Markdown](./markdown-test.md)`. 
 
-If the label is `README`, the article becomes the index page, or welcome page, or main page of the generated web site.
 
-A doxygen label is expected to be **unique** in the project. But there may several markdown files sharing a common name under different sub-folders. In such case, referring markdown by label name breaks down, though doxygen still generate every article. A special exception is that multiple `index` or `mainpage` titled articles confuses doxygen so which article is selected as index page eventually is an undefined behavor.
+If the label is `README`, `index` or `mainpage`, the article becomes the index page, or welcome page, or main page of the generated web site.
 
-More about the label of markdown files, refer to official [markdown support](#md_page_header)
+A doxygen label is expected to be **unique** in the project. But there may several markdown files sharing a common name under different sub-folders. In such case, referring markdown by label name breaks down, though doxygen still generate every article. A special exception is that multiple `README`, `index` or `mainpage` titled articles confuses doxygen so which article is selected as index page eventually is an undefined behavor.
+
+More about the label of markdown files, refer to official [markdown support](https://www.doxygen.nl/manual/markdown.html#md_page_header)
 
 Read the section [test link](#test-link) for more examples. 
