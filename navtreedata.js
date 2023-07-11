@@ -40,11 +40,13 @@ var NAVTREE =
       [ "h2", "md_use-markdown_2markdown-test.html#h2", [
         [ "h3", "md_use-markdown_2markdown-test.html#h3", null ]
       ] ],
-      [ "basic", "md_use-markdown_2markdown-test.html#basic", null ],
+      [ "basic function test", "md_use-markdown_2markdown-test.html#basic-function-test", null ],
       [ "test link", "md_use-markdown_2markdown-test.html#test-link", null ],
       [ "image test", "md_use-markdown_2markdown-test.html#image-test", null ],
       [ "table test", "md_use-markdown_2markdown-test.html#table-test", null ],
-      [ "html test", "md_use-markdown_2markdown-test.html#html-test", null ]
+      [ "html test", "md_use-markdown_2markdown-test.html#html-test", null ],
+      [ "table of contents", "md_use-markdown_2markdown-test.html#table-of-contents", null ],
+      [ "article title and Doxygen label", "md_use-markdown_2markdown-test.html#article-title-and-doxygen-label", null ]
     ] ],
     [ "math & chinese", "md_use-markdown_2math.html", [
       [ "chinese", "md_use-markdown_2math.html#chinese", null ],

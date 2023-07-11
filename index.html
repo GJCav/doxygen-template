@@ -137,6 +137,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <ul><li class="level1"><a href="#hello-doxygen-">Hello doxygen !</a></li>
 <li class="level1"><a href="#status">Status</a></li>
 <li class="level1"><a href="#quick-start">Quick Start</a></li>
+<li class="level1"><a href="#installation">Installation</a></li>
 <li class="level1"><a href="#license">LICENSE</a></li>
 </ul>
 </div>
@@ -149,7 +150,7 @@ Hello doxygen !</h1>
 <li>support multiple sub-projects: each folder under the project root folder is considered a sub-project, or a module of the project. Doxygen is configured to scan recursively and generate thorough document.</li>
 <li>support math rendering: with minimal configuration, we can render the math expression using our familiar syntax. Inline equations are surrounded by <code>$</code> and block equations are surrounded by <code>$$</code>.</li>
 <li>encourage markdown document: comments from code files are informative, but they are API <em>reference</em> rather than <em>guide</em>. A fresh user expects to read guides that introduces and shows the outline of the project, teaches the user examples with baby-understandable explanation. So markdown documents besides the comments are encouraged as markdown is easy to edit and read with various editor compared to raw letters in comments.</li>
-<li>out-of-box Github Page deploy</li>
+<li>out-of-box Github Page deploy: a built-in github action script enables making the document and deploying it to Github Page after a push to <code>main</code> branch.</li>
 </ul>
 <h1><a class="anchor" id="status"></a>
 Status</h1>
@@ -157,26 +158,50 @@ Status</h1>
 <h1><a class="anchor" id="quick-start"></a>
 Quick Start</h1>
 <ul>
-<li>write a welcome page:<ul>
-<li>This file, which you are reading now. <a class="el" href="index.html#md_README">README.md</a></li>
-</ul>
-</li>
 <li>markdown examples:<ul>
 <li>The welcome page. <a class="el" href="index.html#md_README">README.md</a></li>
 <li>Markdown syntax testing. <a class="el" href="md_use-markdown_2markdown-test.html">markdown-test</a></li>
 </ul>
 </li>
+<li>write a welcome page: this file, which you are reading now. <a class="el" href="index.html#md_README">README.md</a></li>
 <li>link examples:<ul>
-<li>Links in markdown. <a class="el" href="md_basic-usage_2link-test.html">link-test</a></li>
+<li>links in markdown. <a class="el" href="md_basic-usage_2link-test.html">link-test</a></li>
 <li>Official guide: <a href="https://www.doxygen.nl/manual/autolink.html">automatic link generation</a></li>
 <li>Official references: <a href="https://www.doxygen.nl/manual/commands.html#cmdref">command-ref</a></li>
 </ul>
 </li>
+<li>chinese &amp; math: <a class="el" href="md_use-markdown_2math.html">chinese &amp; math</a></li>
 <li>intra-code comments examples:<ul>
-<li>code files under folder <code>basic-usage</code>, such as <code><a class="el" href="main_8cpp.html" title="this file shows the basic usage of the Doxygen documentation system">basic-usage/main.cpp</a></code>.</li>
+<li>code files under folder <code>basic-usage</code>, such as <code><a class="el" href="main_8cpp.html" title="this file shows the basic usage of the Doxygen documentation system">basic-usage/main.cpp</a></code></li>
 </ul>
 </li>
-<li>chinese &amp; math: <a class="el" href="md_use-markdown_2math.html">chinese &amp; math</a></li>
+</ul>
+<h1><a class="anchor" id="installation"></a>
+Installation</h1>
+<p>Requirements:</p>
+<ul>
+<li>doxygen 1.9.7</li>
+<li><a href="https://github.com/jothepro/doxygen-awesome-css">doxygen-awesome-css v2.2.1</a></li>
+</ul>
+<p>Installation guide: assume that you have already written some code in a project and want to add doxygen support now. Your project path is <code>&lt;prj&gt;</code>. You can install the template project following these steps:</p>
+<ul>
+<li>install doxygen with version higher than 1.9.7</li>
+<li>execute <code>doxygen -v</code> in the shell and verify it prints correct version information</li>
+<li><p class="startli">clone the <code>doxygen-template</code> to another folder, denoted by <code>&lt;template&gt;</code></p>
+<div class="fragment"><div class="line">mkdir &lt;template&gt;</div>
+<div class="line">cd &lt;template&gt;</div>
+<div class="line">git clone --recursive https://github.com/GJCav/doxygen-template.git</div>
+</div><!-- fragment --></li>
+<li><p class="startli">delete functionless files in template</p>
+<div class="fragment"><div class="line">rm -rf .git basic-usage use-markdown .gitmodules README.md</div>
+</div><!-- fragment --></li>
+<li><p class="startli">copy remaining files to your project</p>
+<div class="fragment"><div class="line">cp * &lt;prj&gt;</div>
+</div><!-- fragment --></li>
+<li><p class="startli">(optional) disable github action:</p>
+<div class="fragment"><div class="line">cd &lt;prj&gt;</div>
+<div class="line">rm .github/workflows/make-docs.yaml</div>
+</div><!-- fragment --></li>
 </ul>
 <h1><a class="anchor" id="license"></a>
 LICENSE</h1>

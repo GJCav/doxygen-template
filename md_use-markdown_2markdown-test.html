@@ -137,23 +137,25 @@ $(document).ready(function(){initNavTree('md_use-markdown_2markdown-test.html','
 <ul><li class="level1"><a href="#h2">h2</a><ul><li class="level2"><a href="#h3">h3</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#basic">basic</a></li>
+<li class="level1"><a href="#basic-function-test">basic function test</a></li>
 <li class="level1"><a href="#test-link">test link</a></li>
 <li class="level1"><a href="#image-test">image test</a></li>
 <li class="level1"><a href="#table-test">table test</a></li>
 <li class="level1"><a href="#html-test">html test</a></li>
+<li class="level1"><a href="#table-of-contents">table of contents</a></li>
+<li class="level1"><a href="#article-title-and-doxygen-label">article title and Doxygen label</a></li>
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="use-markdown"></a></p>
 <p>Yes, Doxygen can processing <code>.md</code> files !!</p>
-<p>Bellow are some functional tests.</p>
 <h1><a class="anchor" id="h2"></a>
 h2</h1>
+<p>This is <code>h2</code> title.</p>
 <h2><a class="anchor" id="h3"></a>
 h3</h2>
 <h3>h4</h3>
-<h1><a class="anchor" id="basic"></a>
-basic</h1>
+<h1><a class="anchor" id="basic-function-test"></a>
+basic function test</h1>
 <p><b>bold text</b></p>
 <p><em>italic text</em></p>
 <blockquote class="doxtable">
@@ -179,7 +181,7 @@ basic</h1>
 <li>list 4, nested block test</li>
 </ol>
 <blockquote class="doxtable">
-<p>&zwj;quote, asdfasdfasdfeeee </p>
+<p>&zwj;quote, asdfasdfasdfeeee. Not supported yet. Doxygen treated nested quote blocks as if there were not nested: no indent is added to the left. But common markdown editors, such as typora, correctly render the nested hierarchy and add the indent. </p>
 </blockquote>
 <ul>
 <li>hello</li>
@@ -201,13 +203,14 @@ basic</h1>
 <div class="line">   print(f<span class="stringliteral">&quot;hello {name}&quot;</span>)</div>
 </div><!-- fragment --><h1><a class="anchor" id="test-link"></a>
 test link</h1>
+<p>Hyperlinks are complicate compared to other features</p>
 <p>See: <a class="el" href="md_basic-usage_2link-test.html">link test</a></p>
 <h1><a class="anchor" id="image-test"></a>
 image test</h1>
 <div class="image">
 <img src="test-image.png" alt=""/>
 </div>
-    <p>But remember to include the image folder path <code>use-markdown/typora</code> in the <code>IMAGE_PATH</code>, or use provided <code>Makefile</code>. <code>make docs</code> will find all images (<code>*.png</code> and <code>*.jpg</code>) recursively and add their folder paths to <code>IMAGE_PATH</code>.</p>
+    <p>To generate HTML with images, put the image folder path in the <code>Doxyfile</code> option <code>IMAGE_PATH</code>. In this example, the folder path is <code>use-markdown/typora</code>. Setting <code>IMAGE_PATH</code> manually is tedious, and an <code>Makefile</code> is provided to automate it. Command <code>make docs</code> will find all images (<code>*.png</code> and <code>*.jpg</code>) recursively and add their folder paths to <code>IMAGE_PATH</code>.</p>
 <p>See <code>Makefile</code> and <code>docs/find-img-path.sh</code> to customize the behavior.</p>
 <h1><a class="anchor" id="table-test"></a>
 table test</h1>
@@ -223,7 +226,22 @@ table test</h1>
 </table>
 <h1><a class="anchor" id="html-test"></a>
 html test</h1>
-<div style="display: flex;"> <div style="display: block; width: 30px; height: 30px; background-color: red;"></div> <div>some text here</div> <div style="display: block; width: 30px; height: 30px; background-color: yellow;"></div> </div> </div></div><!-- contents -->
+<p>If rendered correctly, there is a red block on the <code>some text here</code> and a yellow block on the right.</p>
+<div style="display: flex;"> <div style="display: block; width: 30px; height: 30px; background-color: red;"></div> <div>some text here</div> <div style="display: block; width: 30px; height: 30px; background-color: yellow;"></div> </div><h1><a class="anchor" id="table-of-contents"></a>
+table of contents</h1>
+<p>Add <code>[TOC]</code> on the line next to the title. Doxygen will generate a TOC sidebar as illustrated bellow.</p>
+<div class="image">
+<img src="toc.png" alt=""/>
+<div class="caption">
+toc</div></div>
+    <h1><a class="anchor" id="article-title-and-doxygen-label"></a>
+article title and Doxygen label</h1>
+<p>The top level title, defined by <code># title</code>, the <code>Use Mardown</code> in this article, will be the label in doxygen. A doxygen label can be referred globally among the project. More specifically, the project comprises all files set by <code>INPUT</code> in <code>Doxyfile</code>. Thus this article can be referred as <code>\ref use-markdown</code> as an addition to markdown style <code>[Use Markdown](./markdown-test.md)</code>.</p>
+<p>If the label is <code>README</code>, <code>index</code> or <code>mainpage</code>, the article becomes the index page, or welcome page, or main page of the generated web site.</p>
+<p>A doxygen label is expected to be <b>unique</b> in the project. But there may several markdown files sharing a common name under different sub-folders. In such case, referring markdown by label name breaks down, though doxygen still generate every article. A special exception is that multiple <code>README</code>, <code>index</code> or <code>mainpage</code> titled articles confuses doxygen so which article is selected as index page eventually is an undefined behavor.</p>
+<p>More about the label of markdown files, refer to official <a href="https://www.doxygen.nl/manual/markdown.html#md_page_header">markdown support</a></p>
+<p>Read the section <a class="el" href="md_use-markdown_2markdown-test.html#test-link">test link</a> for more examples. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
